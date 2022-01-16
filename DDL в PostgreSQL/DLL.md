@@ -117,5 +117,5 @@ CREATE TABLE persons.Phone
   is_main   BOOL    NOT NULL ,
   is_owner  BOOL    NOT NULL ,
   PRIMARY KEY (person_id, phone)
-) ;>
+) ;
 
