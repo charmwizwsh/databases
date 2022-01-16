@@ -2,40 +2,41 @@
 
 1. Создание БД
 
->CREATE DATABASE Dealer;
+CREATE DATABASE Dealer;
+
 2. Создание табличного пространства и роли.
->CREATE TABLESPACE DealerTS location 'var/lib/postgresql';
->ALTER DATABASE Dealer SET TABLESPACE DealerTS;
->CREATE ROLE Role1 with CREATEDB CREATEROLE ;
->CREATE USER User1 WITH PASSWORD 'pass';
+CREATE TABLESPACE DealerTS location 'var/lib/postgresql';
+ALTER DATABASE Dealer SET TABLESPACE DealerTS;
+CREATE ROLE Role1 with CREATEDB CREATEROLE ;
+CREATE USER User1 WITH PASSWORD 'pass';
 
 3. Схемы данных
->CREATE SCHEMA Cars;
->CREATE SCHEMA Persons;>
+CREATE SCHEMA Cars;
+CREATE SCHEMA Persons;
 
 4. Таблицы проекта
 
->CREATE TABLE cars.Car
->(
->  car_id   INTEGER NOT NULL ,
->  vin      VARCHAR NULL     ,
->  von      VARCHAR NOT NULL ,
->  year     INTEGER NOT NULL ,
->  model_id INTEGER NOT NULL ,
->  PRIMARY KEY (car_id)
->);
+CREATE TABLE cars.Car
+(
+  car_id   INTEGER NOT NULL ,
+  vin      VARCHAR NULL     ,
+  von      VARCHAR NOT NULL ,
+  year     INTEGER NOT NULL ,
+  model_id INTEGER NOT NULL ,
+  PRIMARY KEY (car_id)
+);
 
->CREATE TABLE cars.Doc
->(
->  doc_id      INTEGER NOT NULL ,
->  doc_no      VARCHAR NOT NULL ,
->  doc_dt      DATE    NULL     ,
->  car_id      INTEGER NOT NULL ,
->  price       NUMERIC NOT NULL ,
->  person_id   INTEGER NULL     ,
->  employee_id INTEGER NULL     ,
->  PRIMARY KEY (doc_id)
->) ;
+CREATE TABLE cars.Doc
+(
+  doc_id      INTEGER NOT NULL ,
+  doc_no      VARCHAR NOT NULL ,
+  doc_dt      DATE    NULL     ,
+  car_id      INTEGER NOT NULL ,
+  price       NUMERIC NOT NULL ,
+  person_id   INTEGER NULL     ,
+  employee_id INTEGER NULL     ,
+  PRIMARY KEY (doc_id)
+) ;
 
 CREATE TABLE persons.Email
 (
